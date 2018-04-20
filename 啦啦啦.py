@@ -1,0 +1,26 @@
+import turtle
+turtle.pensize(10)
+turtle.penup()
+turtle.goto(-100,200)
+
+
+turtle.pendown()
+turtle.pencolor('blue')
+turtle.forward(300)      
+turtle.penup()
+turtle.goto(-200,0)
+turtle.pendown()
+turtle.pencolor('red')
+turtle.forward(500)
+turtle.penup()
+turtle.goto(0,0)
+turtle.pendown()
+turtle.pencolor('black')
+turtle.goto(-65,-150)
+turtle.forward(260)
+turtle.left(135)
+turtle.forward(50)
+turtle.right(180)
+turtle.forward(100)
+
+turtle.mainloop()

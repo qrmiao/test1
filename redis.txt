@@ -1,0 +1,9 @@
+启动
+a  redis-server &
+ redis-cli
+b  /bin/systemctl start redis.service
+c   sevice start redis
+get p获得P值
+set p 1设置P值
+incr递增 
+decr递减
