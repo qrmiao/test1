@@ -1,21 +1,114 @@
 # git 命令操作及相关命令
 ### git文件夹初始化
-  git init
-git add .
-git status
-git commit -m ''
-git rm
-git checkout
-git reset
-git log
-git remote add origin ***
-git push -u origin master 推送并修改默认主机
-git push origin master 推送到分支
-git push origin 推送到默认主机
-git clone ***
-git branch 查看分支
-git branch new-cool-function  建造一个叫new-cool-function的分支
-git checkout new-cool-function  切换分支
-git marge new-cool-function 合并分支
-git branch -d new-cool-function 删除分支
-ssh-keygen -t rsa -C
+ 1. git init
+2.git add .
+3.git status
+4.git commit -m ''
+5.git rm
+6.gim  checkout
+7.git reset
+8.git log
+9.git remote add origin ***
+10.git push -u origin master 推送并修改默认主机
+11.git push origin master 推送到分支
+12.git push origin 推送到默认主机
+13.git clone ***
+14.git branch 查看分支
+15.git branch new-cool-function  建造一个叫new-cool-function的分支
+16.git checkout new-cool-function  切换分支
+17.git marge new-cool-function 合并分支
+18.git branch -d new-cool-function 删除分支
+19.ssh-keygen -t rsa -C
+### DJANGO 操作
+
+1. mvc--->mvt
+2. virtualenv --no-site-packages 版本名
+3. 
+windows:
+cd Scripts   执行activate 退出deactivate
+
+linux：
+source bin/activate  退出source deactivate
+
+4. 安装django
+pip install django==1.11
+
+5. 创建django工程
+django-admin startproject helloworld
+
+6. 启动项目
+python manage.py runserver IP：端口
+
+7. 
+__init__.py： 初始化，配置pymysql链接的地方
+settings.py: 配置信息位置，databases等
+urls.py: url路由
+wsgi.py: 网关
+
+8. 创建app
+python manage.py startapp app_name
+
+9. 配置
+1. settings.py文件中INSTALLED_APPS中写入创建的app的name
+2. 也可以导入apps.py文件中的APPCONFIG下的name属性
+
+10. 模型
+在models.py文件中定义class 模型名称
+
+继承models.Model
+
+db_tables:定义数据库中的表名称
+
+11. 迁移
+python manage.py makemigrations
+
+python manage.py migrate
+
+12. 保持数据
+
+stu = Student()
+stu.name = 'xxx'
+stu.save()
+
+13. 创建超级管理员的账号密码
+python manage.py createsuperuser
+
+14. 
+ORM 对象关系映射，翻译机
+
+15. 模型字段
+
+CharField: 字符串
+  max_length:长度
+BooleanField：布尔类型
+  1 0
+DateField: 年月日，日期
+  auto_now_add： 第一次创建的时候赋值
+  auto_now：每次修改的时候赋值
+DateTimeField：年月日 时分秒
+  auto_now_add
+  auto_now
+
+AutoField：自动增长
+
+DecimalField： 
+  models.DecimalField(max_digits=3, decimal_places=1)
+  max_digits：总位数
+  decimal_places：小数后多少位
+
+TextField：存文本信息
+IntegerField：整数
+FloatField：浮点
+
+FileField：文件上传字段
+ImageField：上传图片
+  upload_to="" 指定上传图片的路径
+
+
+16. 模型参数
+default: 默认
+null ：设置是否为空，针对数据库中该字段是否可以为空
+blank ：设置是否为空，针对表单提交该字段是否可以为空
+
+primary_key：创建主键
+unique：唯一
