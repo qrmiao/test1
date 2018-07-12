@@ -1,0 +1,74 @@
+HTML 标签 --CONTENT 内容
+css 样式表--display 显示--box model 盒子模型
+jsvascript --Behavior
+~~DOM--document
+jQuery
+Ajax
+pixiv
+DDL:creat/drop/alter
+
+DML:insert/delete/update
+DQL:select
+DCL:grant/revoke
+drop database if exists company 删除数据库如果有company这个库
+create database company default charset utf8;创建库
+关系型数据库用二维表组织数据，有自己的编程语言
+切换到company
+use company;
+-- 创建部门表，员工表
+create table tb_dept
+(
+deptno integer not null comment'部门编号',
+dname varchar(20) not null comment'部门名称',
+dloc varchar(10) comment'部门所在地',
+primary key (deptno)  //设置主键
+);
+alter table tb_dept add ddate date  comment '成立日期';
+insert into tb_dept values(10,'财务部','成都',now());
+insert into tb_dept values(20,'研发部',null,null);
+insert into tb_dept (deptno,dname) values(30,'销售1部'),(40,'销售2部'),(50,'后勤部');
+delete from tb_dept where deptno=20;
+update tb_dept set dloc='深渊',ddate='2018-4-1' where deptno='30';
+select * from tb_dept;
+select deptno as 部门标号,dname as 部门名称 FROM tb_dept;
+limit 限制查询几条数据
+alter table Student add foreign key(g_id) references Grade(id);
+
+ select * from student limit 2 offset 1;
+drop 类型 名字
+delete from 表 条件
+select * from stu s join gread g on g.id=s.g_id where g.g_name='python'; 关联查询
+select count(*) as '学生数目',g.g_name as '班级名称' from stu s join gread g on s.g_id=g.id group by (g.id); 求和
+import pymysql
+
+# 1.建立连接
+
+db = pymysql.Connect(
+	host='47.106.134.168',
+	user='root',
+	passwd='',
+	db='test3',
+	port=3306,
+	charset='utf8')
+
+print(db)
+
+# 2.获取游标
+cursor = db.cursor()
+
+# 3.执行sql
+sql1 = 'select * from Tbstudent;'
+cursor.execute(sql1)
+
+# 4. 获取结果
+sql_data = cursor.fetchall() # 获取所有结果
+sql_data_line1 = cursor.fetchone() # 获取
+print(sql_data_line1)
+for i in sql_data:
+	print(i)
+
+# 关闭连接
+
+db.close()
+ redis-server /root/redis-3.2.11/redis.conf &
+redis-cli

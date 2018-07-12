@@ -1,0 +1,72 @@
+﻿1.MVC
+2.MVT
+
+
+
+>>> 安装虚拟环境
+pip3 install virtualenv
+
+
+>>> 创建虚拟环境
+virtualenv --no-site-packages -p python解释器路径 虚拟环境路径和名字
+
+
+>>> 启动虚拟环境
+source (activate的文件路径)
+
+苹果
+>>> 退出虚拟环境
+deactivate
+
+
+>>> 安装pymysql、django
+pip3 install pymysql
+pip3 install django==1.11
+
+
+>>> 创建django项目
+django-admin startproject 项目名
+
+
+>>> 启动django
+python3 manage.py runserver ip:端口
+
+
+>>> 创建app
+python manage.py startapp app名字
+
+
+>>> app
+__init__.py:初始化
+admin.py:用户名
+apps.py：自己app的名字
+models.py:定义数据库表的形式
+tests.py:测试代码
+views.py:控制方法
+
+
+>>> 创建表
+在 models.py 文件中
+class 类名(models.Model):
+	键名 = models.CharField()/BooleanField()/IntegerField()
+	class Meta:
+		db_table = '表名'
+
+
+>>> 设置数据库地址
+在 settings.py 文件中
+DATABASS = {
+	'default': {
+	'ENGINE': 'django.db.backends.mysql',
+	'HOST': '数据库地址',
+	'PORT': '端口号',
+	'USER': '用户名',
+	'PASSWORD': '密码',
+	'NAME': '数据库名',
+	}
+}
+
+
+>>> 迁移数据库
+python3 manage.py makemigrations
+python3 manage.py migrate

@@ -1,0 +1,42 @@
+清屏 clear
+创建用户 adduser 用户名
+改密码 passwd 用户名
+主机名字 hostname
+系统名字 uname
+切换用户 su 用户名
+查看线程 top
+查看进程 ps
+显示刚才的命令 history
+查看当前位置 pwd
+查看所有文件夹 ls  -a 显示隐藏文件  -l 显示文件类型
+建空文件 touch
+查看手册 man 命令名
+删文件 rm 文件名 强制删除 rm -f 文件名
+创建文件夹 mkdir 文件夹
+删文件夹 rmdir 文件夹名 强制删除 rmdir -rf 文件夹名
+空文本加内容 echo hello,world! >hello.text
+复制文本 cp 文件 文件夹/文件名
+剪切/重命名 mv 文件 文件夹/文件名
+看头两行 head 5 文件名 尾 tail 5 文件名
+比较 diff 文件名 文件名
+文件中有几个单词 wc 文件名
+查找 grep
+排序sort
+去重uniq
+tar -cvf 归档名 被归档文件
+tar -xvf 要解归档文件
+18613201237张莹
+nginx -s reload
+nginx -s stop
+ps -aus | grep nginx 查进程
+firewall-cmd --state 查看防火墙
+systemctl stop（start,restart） firewalld 停防火墙
+firewall-cmd --status 防火墙状态
+firewall-cmd --zone=public --add-port=80/tcp --permanent防火墙开洞
+ firewall-cmd --reload防火墙重启
+systemctl start mariadb启动SQL服务器
+ mysql -u root -p 启动SQL
+systemctl enable/disable mariadb 开机自启
+show databases 显示数据库
+crontab  定时任务
+ 开机自启
