@@ -15,10 +15,19 @@ class UserInfo(models.Model):
 
     # default,blank是python层面的约束,不影响数据库表结构
 
-    # 用户对象名字返回，后台订单管理现实
-    def __str__(self):
-        return self.uname.encode('utf-8')
-
-    # 修改后台管理界面显示
+    # # 用户对象名字返回，后台订单管理现实
+    # def __str__(self):
+    #     return self.uname.encode('utf-8')
+    #
+    # # 修改后台管理界面显示
+    # class Meta:
+    #     verbose_name_plural = '用户管理'
     class Meta:
-        verbose_name_plural = '用户管理'
+        db_table = 'users_info'
+class UserTicketModel(models.Model):
+    user = models.ForeignKey(UserInfo)  # 关联用户
+    ticket = models.CharField(max_length=256)   # 密码
+    out_time = models.DateTimeField()  # 过期时间
+
+    class Meta:
+        db_table = 'users_ticket'

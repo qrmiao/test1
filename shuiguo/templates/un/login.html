@@ -6,7 +6,20 @@
 	<link rel="stylesheet" type="text/css" href="/static/un/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="/static/un/css/main.css">
 </head>
-<body>
+    <script type="text/javascript">
+
+		function login(){
+			var msg='{{name}}';
+			var msg1='{{password}}';
+			if (msg!=""){
+			    alert(msg);
+			}
+			if (msg1!=""){
+			    alert(msg1);
+			}
+		}
+	</script>
+<body onload="login()">
 	<div class="login_top clearfix">
 		<a href="index.html" class="login_logo"><img src="/static/un/images/logo02.png"></a>
 	</div>
@@ -18,7 +31,7 @@
 			<div class="login_form fr">
 				<div class="login_title clearfix">
 					<h1>用户登录</h1>
-					<a href="#">立即注册</a>
+					<a href="{% url 'user:regist' %}">立即注册</a>
 				</div>
 				<div class="form_input">
 					<form method="post">
