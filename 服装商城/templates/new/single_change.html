@@ -1,0 +1,397 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Nuevo Shop a Ecommerce Online Shopping Flat Bootstarp Resposive Website Template |Single :: w3layouts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Nuevo Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="applijegleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="/static/new/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<link href="/static/new/css/style.css" rel='stylesheet' type='text/css' />
+<script src="/static/new/js/jquery-1.11.1.min.js"></script>
+<!-- start menu -->
+<link href="/static/new/css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="/static/new/js/megamenu.js"></script>
+<script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
+<script src="/static/new/js/menu_jquery.js"></script>
+<script src="/static/new/js/simpleCart.min.js"> </script>
+<script src="/static/new/js/bootstrap.js"> </script>
+<!--web-fonts-->
+ <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,300italic,600,700' rel='stylesheet' type='text/css'>
+ <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700' rel='stylesheet' type='text/css'>
+<!--//web-fonts-->
+<script src="/static/new/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="/static/new/js/move-top.js"></script>
+<script type="text/javascript" src="/static/new/js/easing.js"></script>
+	<link rel="stylesheet" href="/static/new/css/flexslider.css" type="text/css" media="screen" />
+
+<!--/script-->
+<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},900);
+				});
+			});
+</script>
+<!-- the jScrollPane script -->
+<script type="text/javascript" src="/static/new/js/jquery.jscrollpane.min.js"></script>
+		<script type="text/javascript" id="sourcecode">
+			$(function()
+			{
+				$('.scroll-pane').jScrollPane();
+			});
+		</script>
+<!-- //the jScrollPane script -->
+</head>
+<body>
+<!--start-home-->
+<!-- header_top -->
+<div class="top_bg" id="home">
+	<div class="container">
+		<div class="header_top">
+			<div class="top_right">
+				<ul>
+					<li><a href="#">帮助</a></li>
+					{% if name %}
+
+					     <li><a href="/stu/login/">欢迎{{name}}</a></li>
+
+
+					{% endif%}
+					<li><a href="/stu/regist/">注册</a></li>
+					<li><a href="/stu/login/">登录</a></li>
+				</ul>
+			</div>
+			<div class="top_left">
+				<h6><span></span> Call us : 032 2352 782</h6>
+			</div>
+				<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<!--header-->
+<div class="header_bg">
+   <div class="container">
+	<div class="header">
+	  <div class="head-t">
+		 <div class="logo">
+			  <a href="index.html"><h1>Nuevo <span>Shop</span></h1> </a>
+		  </div>
+		  <div class="header_right">
+			<div class="cart box_1">
+				<a href="checkout.html">
+				<div class="total">
+					{{sum}}({{all}} 件)</div>
+					<i class="glyphicon glyphicon-shopping-cart"></i></a>
+				<p><a href="/comm/car/" class="simpleCart_empty">购物车</a></p>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	    </div>
+		<!--start-header-menu-->
+		<ul class="megamenu skyblue">
+			<li class="active grid"><a class="color1" href="comm/index/">主页</a></li>
+			{% for stu in stu%}<li><a class="color4" href="/comm/product/?id={{stu.id}}">{{stu.w_name}}</a>{% endfor %}
+
+
+
+				</li>
+		 </ul> 
+	</div>
+</div>
+</div>
+ <!--start-content-->
+<!-- products -->
+	<div class="products">
+		<div class="container">
+			<div class="products-grids">
+				<div class="col-md-8 products-single">
+				<div class="col-md-5 grid-single">		
+						<div class="flexslider">
+							  <ul class="slides">
+								<li data-thumb="/media/{{na.sws_img}}" >
+									<div class="thumb-image"> <img src="/media/{{na.sws_img}}" data-imagezoom="true" class="img-responsive" alt=""/> </div>
+								</li>
+								<li data-thumb="/media/{{na.sws_img1}}">
+									 <div class="thumb-image"> <img src="/media/{{na.sws_img1}}" data-imagezoom="true" class="img-responsive" alt=""/> </div>
+								</li>
+								<li data-thumb="/media/{{na.sws_img2}}">
+								   <div class="thumb-image"> <img src="/media/{{na.sws_img2}}" data-imagezoom="true" class="img-responsive" alt=""/> </div>
+								</li> 
+							  </ul>
+						</div>
+						<!-- FlexSlider -->
+						<script src="/static/new/js/imagezoom.js"></script>
+						<script defer src="/static/new/js/jquery.flexslider.js"></script>
+						<script>
+						// Can also be used with $(document).ready()
+						$(window).load(function() {
+						  $('.flexslider').flexslider({
+							animation: "slide",
+							controlNav: "thumbnails"
+						  });
+						});
+						</script>
+
+					</div>	
+				<div class="col-md-7 single-text">
+					<div class="details-left-info simpleCart_shelfItem">
+						<form action="" method="post">
+							{% csrf_token %}
+						<h3>{{na.sws_name}}</h3>
+
+						<div class="price_single">
+
+							<span class="actual item_price">{{na.sws_pic}}￥</span><a href="#">联系商家</a>
+						</div>
+						<h2 class="quick">商品简介</h2>
+						<p class="quick_desc"> {{na.sws_introduction}}</p>
+
+
+						<h3>大小</h3>
+						<ul class="size">
+							<select name="level" >
+	                              <option value="小号" >&nbsp;小号</option>
+	                              <option value="中号" >&nbsp;中号</option>
+								  <option value="大号" >&nbsp;大号</option>
+
+							</select>
+						</ul>
+						<div class="quantity_box">
+						    <span>数量:</span>
+							<div class="product-qty">
+								<input type="text" name="num">
+							</div>
+						</div>
+					<div class="clearfix"> </div>
+				<div class="single-but item_add">
+					<input type="submit" value="点击更改"/>
+				</div></form>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="col-md-4 products-grid-right">
+					<div class="w_sidebar">
+						<div class="w_nav1">
+							<h4>所有产品</h4>
+							<ul>
+								{% for stu in stus%}
+
+                                   <li><a class="color4" href="/comm/product/?sid={{stu.id}}">{{stu.sw_name}}</a>
+
+                                 {% endfor %}
+							</ul>	
+						</div>
+
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				<!-- collapse -->
+    <div class="panel-group collpse" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Description
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+           additional information
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          reviews(5)
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingFour">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          help
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+</div>
+<!-- collapse -->
+ <!--/start-latest-->
+
+<!-- //products -->
+	 <!--start-bottom-->
+		   <!--start-image-cursuals-->
+                  <div class="scroll-slider">
+                  	<div class="container"> 											 
+							<div class="nbs-flexisel-container"><div class="nbs-flexisel-inner"><ul class="flexiselDemo3 nbs-flexisel-ul" style="left: -253.6px; display: block;">					    					    					       
+							<li onclick="location.href='#';" class="nbs-flexisel-item" style="width: 253.6px;"><img src="/static/new/images/c3.png" alt=""/></li><li onclick="location.href='#';" class="nbs-flexisel-item" style="width: 253.6px;"><img src="images/c4.png" alt=""/></li><li onclick="location.href='#';" class="nbs-flexisel-item" style="width: 253.6px;"><img src="/static/new/images/c1.png" alt=""/></li><li onclick="location.href='#';" class="nbs-flexisel-item" style="width: 253.6px;"><img src="/static/new/images/c2.png" alt=""/></li><li onclick="location.href='#';" class="nbs-flexisel-item" style="width: 253.6px;"><img src="/static/new/images/c3.png" alt=""/></li><li onclick="location.href='#';" class="nbs-flexisel-item" style="width: 253.6px;"><img src="/static/new/images/c4.png" alt=""/></li><li onclick="location.href='#';" class="nbs-flexisel-item" style="width: 253.6px;"><img src="/static/new/images/c1.png" alt=""/></li><li onclick="location.href='#';" class="nbs-flexisel-item" style="width: 253.6px;"><img src="/static/new/images/c2.png" alt=""/></li></ul><div class="nbs-flexisel-nav-left" style="top: 21.5px;"></div><div class="nbs-flexisel-nav-right" style="top: 21.5px;"></div></div></div>
+							<div class="clearfix"> </div>      
+						  <!--start-image-->
+								<script type="text/javascript" src="/static/new/js/jquery.flexisel.js"></script>
+								<!--//end-->
+								<script type="text/javascript">
+								$(window).load(function() {
+								    $(".flexiselDemo3").flexisel({
+								        visibleItems: 5,
+								        animationSpeed: 1000,
+								        autoPlay: true,
+								        autoPlaySpeed: 3000,            
+								        pauseOnHover: true,
+								        enableResponsiveBreakpoints: true,
+								        responsiveBreakpoints: { 
+								            portrait: { 
+								                changePoint:480,
+								                visibleItems: 2
+								            }, 
+								            landscape: { 
+								                changePoint:640,
+								                visibleItems: 3
+								            },
+								            tablet: { 
+								                changePoint:768,
+								                visibleItems: 3
+								            }
+								        }
+								    });
+								});
+								</script>
+						<!---->
+				  </div>				
+			</div>
+ <!--//end-bottom-->
+		<!--start-footer-->
+
+	     <div class="footer">
+		   <div class="container">
+			<div class="footer-top">
+				<div class="col-md-2 footer-left">
+					<h3>关于我们</h3>
+					<ul>
+						<li><a href="#">公司简讯</a></li>
+						<li><a href="contact.html">简介</a></li>
+						<li><a href="#">介绍</a></li>
+						<li><a href="#">信息</a></li>
+						<li><a href="#">放向</a></li>
+					</ul>
+				</div>
+				<div class="col-md-2 footer-left">
+					<h3>你的建议</h3>
+					<ul>
+						<li><a href="account.html">建议</a></li>
+						<li><a href="#">咨询</a></li>
+						<li><a href="contact.html">投诉</a></li>
+						<li><a href="#">查询</a></li>
+
+					</ul>
+				</div>
+				<div class="col-md-2 footer-left">
+					<h3>购物</h3>
+					<ul>
+						<li><a href="#">主页</a></li>
+						<li><a href="#">女装</a></li>
+						<li><a href="#">男装</a></li>
+						<li><a href="#">鞋子</a></li>
+						<li><a href="#">电子</a></li>
+					</ul>
+				</div>
+				<div class="col-md-2 footer-left ">
+					<h3>友情链接</h3>
+					<ul>
+						<li><a href="#">京东</a></li>
+						<li><a href="#">淘宝</a></li>
+						<li><a href="#">天猫</a></li>
+						<li><a href="#">blibli</a></li>
+						<li><a href="#">聚美优品</a></li>
+					</ul>
+				</div>
+				<div class="col-md-2 footer-left lost">
+					<h3>客户服务</h3>
+					<ul>
+						<li><a href="#">咨询</a></li>
+						<li><a href="#">人工服务</a></li>
+						<li><a href="#">智能查询</a></li>
+						<li><a href="#">投诉</a></li>
+						<li><a href="#">建议</a></li>
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+				
+		</div>
+	</div>
+	<ul class="socials">
+				    <li><a class="soc1" href="#"></a></li>
+				    <li><a class="soc2" href="#"></a></li>
+				    <li><a class="soc3" href="#"></a></li>
+				</ul>
+	 <!--/start-copyright-->
+	 <div class="copy">
+		<div class="container">
+			<p>&copy; 2015 Nuevo Shop. All Rights Reserved | Design by <a href="http://w3layouts.com/">W3layouts</a> </p>
+		</div>
+	</div>
+	 <!--//end-copyright-->
+	<!--end-footer-->
+ <!--//end-content-->
+    	<!--start-smooth-scrolling-->
+						<script type="text/javascript">
+									$(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear' 
+								 		};
+										*/
+										
+										$().UItoTop({ easingType: 'easeOutQuart' });
+										
+									});
+								</script>
+		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+
+</body>
+</html>

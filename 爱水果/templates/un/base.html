@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+            {% block js %}
+                <link rel="stylesheet" type="text/css" href="/static/un/css/reset.css">
+                <link rel="stylesheet" type="text/css" href="/static/un/css/main.css">
+                <script type="text/javascript" src="/static/un/js/jquery-1.12.4.min.js"></script>
+                <script type="text/javascript" src="/static/un/js/jquery-ui.min.js"></script>
+                <script type="text/javascript" src="/static/un/js/slide.js"></script>
+            {% endblock %}
+    <title>{% block title %}
+            {% endblock %}
+    </title>
+            {% block head %}
+
+{% endblock %}
+</head>
+<body>
+{% block body %}
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+            {% block js %}
+            {% endblock %}
+    <title>{% block title %}
+            {% endblock %}
+    </title>
+            {% block head %}
+    <header>
+
+ <h1><img src="/static/back/images/admin_logo.png"/></h1>
+ <ul class="rt_nav">
+  <li><a href="{% url 'user:index' %}" target="_blank" class="website_icon">站点首页</a></li>
+  <li><a href="#" class="clear_icon">清除缓存</a></li>
+  <li><a href="#" class="admin_icon">DeathGhost</a></li>
+  <li><a href="#" class="set_icon">账号设置</a></li>
+  <li><a href="{% url 'back:dj_logout' %}" class="quit_icon">安全退出</a></li>
+ </ul>
+</header>
+<!--aside nav-->
+<!--aside nav-->
+<aside class="lt_aside_nav content mCustomScrollbar">
+ <h2><a href="{% url 'back:index' %}">起始页</a></h2>
+ <ul>
+  <li>
+   <dl>
+    <dt>常用布局示例</dt>
+    <!--当前链接则添加class:active-->
+    <dd><a href="{% url 'goods:pro_list' %}" class="active">商品列表</a></dd>
+       <dd><a href="{% url 'goods:fen_list' %}">所有分类</a></dd>
+       <dd><a href="{% url 'goods:fen_detail' %}">添加分类</a></dd>
+    <dd><a href="{% url 'goods:pro_detail' %}">添加商品</a></dd>
+    <dd><a href="{% url 'goods:pro_bin' %}">商品回收站</a></dd>
+   </dl>
+  </li>
+  <li>
+   <dl>
+    <dt>订单信息</dt>
+    <dd><a href="{% url 'order:order_list' %}">订单列表示例</a></dd>
+    <dd><a href="{% url 'order:order_detail' %}">订单详情示例</a></dd>
+   </dl>
+  </li>
+  <li>
+   <dl>
+    <dt>会员管理</dt>
+    <dd><a href="{% url 'back:user_list' %}">会员列表示例</a></dd>
+    <dd><a href="{% url 'back:user_detail' %}">添加会员（详情）示例</a></dd>
+   </dl>
+  </li>
+  <li>
+   <p class="btm_infor">© DeathGhost.cn 版权所有</p>
+  </li>
+ </ul>
+</aside>
+{% endblock %}
+</head>
+<body>
+{% block body %}
+{% endblock %}
+</body>
+</html>
