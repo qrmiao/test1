@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <div class="container">
+    <!-- <div class="alert alert-warning" role="alert">
+      This is a warning alert—check it out!
+    </div> -->
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <p><h1>奖金计算器</h1></p>
+        <br>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <form id="form" name="testform">
+          <!-- 税前工资 -->
+          <div class="form-group row" >
+            <label for="inputPreTax" class="col-sm-3 col-form-label">目标只数</label>
+            <div class="col-sm-9">
+              <input type="number" class="form-control" name="mubiao" value="0">
+              <div class="invalid-feedback">请输入一个有效的数字</div>
+            </div>
+          </div>
+          <!-- 社保基数 -->
+          <div class="form-group row">
+            <label for="inputPreTax" class="col-sm-3 col-form-label">销售只数</label>
+            <div class="col-sm-9">
+              <input type="number" class="form-control" name="xiaoliang" value="0">
+              <div class="invalid-feedback">请输入一个有效的数字</div>
+            </div>
+          </div>
+            <div class="form-group row">
+            <label for="inputPreTax" class="col-sm-3 col-form-label">没开科会</label>
+            <div class="col-sm-9">
+              <input type="checkbox" class="form-control" id="kehui" >
+              <div class="invalid-feedback">默认为开过</div>
+            </div>
+          </div>
+            <div class="form-group row">
+            <label for="inputPreTax" class="col-sm-3 col-form-label">KPI不及格</label>
+            <div class="col-sm-9">
+              <input type="checkbox" class="form-control" id="kpi" >
+              <div class="invalid-feedback">默认为及格</div>
+            </div>
+          </div>
+          <!-- Action -->
+          <div class="form-group row">
+            <div class="col-sm-9 offset-sm-3">
+              <button id="calculateBtn" type="button" class="btn btn-info">计 算</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="col-md-6 col-sm-12 text-center">
+        <div id="echarMain" style="width: 100%; height:400px;"></div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+            var Bn = document.getElementById('calculateBtn');
+            calculateBtn.onclick = function(){
+                xiaoliang = parseInt(testform.xiaoliang.value);
+                mubiao = parseInt(testform.mubiao.value);
+                kehui = $("#kehui").prop("checked");
+                kpi = $("#kpi").prop("checked");
+                jiangjin =0;
+                var chaoe = function (a,b,d) {
+                    ce = 2500*(a-b);
+                    dachenglv = a/b
+                    if(ce>=100000){
+                        jiangjin = d+ce*0.05
+                    }
+                    else {
+                        jiangjin = d+100*(a -b)
+                    }
+                }
+                var buzu = function (a,b,d) {
+                    dachenglv = a/b;
+                    if(dachenglv>=0.8 && dachenglv<0.85){
+                        jiangjin = d*0.5
+                    }
+                    else if(dachenglv>=0.85 && dachenglv<0.9){
+                        jiangjin = d*0.6
+                    }
+                    else if(dachenglv>=0.9){
+                        jiangjin =d
+                    }
+                }
+                 if (xiaoliang==0 || mubiao==0){
+                     alert('请完善信息');
+                 }
+                 else {
+                     if (mubiao<12){
+                         if (xiaoliang >= mubiao){
+                             jiangjin = 1000
+                         }
+                         else {
+                              buzu(xiaoliang,mubiao,1000)
+                         }
+                     }
+                     else if (mubiao>=12&&mubiao<20){
+                         if (xiaoliang >= mubiao){
+                             chaoe(xiaoliang,mubiao,3000)
+                         }
+                         else {
+                              buzu(xiaoliang,mubiao,3000)
+                         }
+                     }
+                     else if (mubiao>=20&&mubiao<40){
+                         if (xiaoliang >= mubiao){
+                             chaoe(xiaoliang,mubiao,4000)
+                         }
+                         else {
+                              buzu(xiaoliang,mubiao,4000)
+                         }
+                     }
+                     else if (mubiao>=40&&mubiao<60){
+                         if (xiaoliang >= mubiao){
+                             chaoe(xiaoliang,mubiao,5000)
+                         }
+                         else {
+                              buzu(xiaoliang,mubiao,5000)
+                         }
+                     }
+                     else if (mubiao>=60&&mubiao<80){
+                         if (xiaoliang >= mubiao){
+                             chaoe(xiaoliang,mubiao,8000)
+                         }
+                         else {
+                              buzu(xiaoliang,mubiao,8000)
+                         }
+                     }
+                     else if (mubiao>=80&&mubiao<120){
+                         if (xiaoliang >= mubiao){
+                             chaoe(xiaoliang,mubiao,12000)
+                         }
+                         else {
+                              buzu(xiaoliang,mubiao,12000)
+                         }
+                     }
+                     else if (mubiao>=120&&mubiao<160){
+                         if (xiaoliang >= mubiao){
+                             chaoe(xiaoliang,mubiao,13000)
+                         }
+                         else {
+                              buzu(xiaoliang,mubiao,13000)
+                         }
+                     }
+                     else if (mubiao>=160&&mubiao<240){
+                         if (xiaoliang >= mubiao){
+                             chaoe(xiaoliang,mubiao,15000)
+                         }
+                         else {
+                              buzu(xiaoliang,mubiao,15000)
+                         }
+                     }
+                     else if (mubiao>=240&&mubiao<320){
+                         if (xiaoliang >= mubiao){
+                             chaoe(xiaoliang,mubiao,18000)
+                         }
+                         else {
+                              buzu(xiaoliang,mubiao,18000)
+                         }
+                     }
+                     else if (mubiao>=320){
+                         if (xiaoliang >= mubiao){
+                             chaoe(xiaoliang,mubiao,20000)
+                         }
+                         else {
+                              buzu(xiaoliang,mubiao,20000)
+                         }
+                     }
+                     if(xiaoliang<80 && jiangjin>10000){
+                         jiangjin = 10000
+                         alert("封顶了！！！")
+                     }
+                     else if(xiaoliang>=80 &&xiaoliang<160 &&jiangjin>20000){
+                         jiangjin = 20000
+                         alert("封顶了！！！")
+                     }
+                     else if(xiaoliang>=160 &&xiaoliang<240 &&jiangjin>30000){
+                         jiangjin = 30000
+                         alert("封顶了！！！")
+                     }
+                     else if(xiaoliang>=240&&jiangjin>40000 ){
+                         jiangjin = 40000
+                         alert("封顶了！！！")
+                     }
+                     if(kehui == true &&kpi != true){
+                         jiangjin = jiangjin*0.9;
+                         alert( "已扣除10%科会罚金");
+                     }
+                     else if(kpi == true &&kehui != true){
+                         jiangjin = jiangjin*0.9;
+                         alert( "已扣除10%KPI罚金");
+                     }
+                     else if(kehui == true && kpi ==true){
+                         jiangjin = jiangjin*0.8;
+                         alert( "已扣除20%科会与KPI罚金");
+                     }
+
+                      alert( "奖金为"+jiangjin+"元！");
+                 }
+
+            }
+  </script>
+</body>
+</html>
